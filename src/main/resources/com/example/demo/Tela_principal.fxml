@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="rootNode" prefHeight="800.0" prefWidth="800.0" styleClass="root" stylesheets="@Tela_principal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Tela_principal">
+  <children>
+      <HBox fx:id="topmenuNode" maxHeight="45.0" minHeight="45.0" onMouseClicked="#topmenuNode_Mouse_Clicked" onMouseDragged="#topmenuNode_dragged_drag_whole_app" onMousePressed="#topmenuNode_pressed_drag_whole_app" onMouseReleased="#topmenuNode_released_drag_whole_app" prefHeight="45.0" style="-fx-border-width: 0 0 1 0;" styleClass="menubar_container" VBox.vgrow="NEVER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="50.0">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/app-icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            
+                      <MenuBar maxHeight="1.7976931348623157E308" styleClass="menubar_items_container" HBox.hgrow="NEVER" VBox.vgrow="NEVER">
+            <menus>
+              <Menu mnemonicParsing="false" text="Arquivo">
+                <items>
+                  <MenuItem mnemonicParsing="false" text="Novo" />
+                  <MenuItem mnemonicParsing="false" text="Abrir" />
+                  <Menu mnemonicParsing="false" text="Abrir Recente" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Fechar" />
+                  <MenuItem mnemonicParsing="false" text="Salvar" />
+                  <MenuItem mnemonicParsing="false" text="Salvar Como" />
+                  <MenuItem mnemonicParsing="false" text="Reverter" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Preferências…" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Sair" />
+                </items>
+              </Menu>
+              <Menu mnemonicParsing="false" text="Importar">
+                <items>
+                  <MenuItem mnemonicParsing="false" text="Livros Fiscais" />
+                  <MenuItem mnemonicParsing="false" text="Relações de Deduções" />
+                        <MenuItem mnemonicParsing="false" text="Arquivos XML de NF-e" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Recortar" />
+                  <MenuItem mnemonicParsing="false" text="Copiar" />
+                  <MenuItem mnemonicParsing="false" text="Colar" />
+                  <MenuItem mnemonicParsing="false" text="Deletar" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Selecionar tudo" />
+                  <MenuItem mnemonicParsing="false" text="Desfazer seleção" />
+                </items>
+              </Menu>
+              <Menu mnemonicParsing="false" text="Sobre">
+                <items>
+                  <MenuItem mnemonicParsing="false" text="Sobre a Minha Aplicação" />
+                </items>
+              </Menu>
+            </menus>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+          </MenuBar>
+            <HBox alignment="CENTER" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label style="-fx-font-size: 12;" text="Título da Janela - Com Dados de Arquivo">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Pane nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#EventConsume" onMouseDragged="#EventConsume" onMousePressed="#EventConsume" prefHeight="45.0" HBox.hgrow="NEVER">
+               <children>
+                  <HBox alignment="CENTER" layoutX="96.0" layoutY="-1.0" onMouseClicked="#button_M_Clicked" styleClass="window_button_hbox">
+                     <children>
+                        <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+                           <image>
+                              <Image url="@img/window-icons/min-w-12.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets bottom="18.4" left="17.5" right="20.0" top="18.4" />
+                     </padding>
+                  </HBox>
+                  <HBox layoutX="47.0" layoutY="-1.0" onMouseClicked="#button_O_Clicked" styleClass="window_button_hbox">
+                     <children>
+                        <ImageView fx:id="maxrestore_image" fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/window-icons/max-w-30.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets bottom="18.4" left="20.0" right="17.5" top="18.4" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="-1.0" layoutY="-1.0" onMouseClicked="#button_X_Clicked">
+                     <children>
+                        <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/window-icons/close-w-30.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="18.4" left="17.5" right="18.5" top="18.4" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="window_button_hbox" />
+                        <String fx:value="window_close_btn_hbox" />
+                     </styleClass>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+          <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox VBox.vgrow="ALWAYS">
+               <children>
+                  <Pane maxHeight="1.7976931348623157E308" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" styleClass="menu-navbar" HBox.hgrow="NEVER">
+                     <children>
+                        <Pane layoutY="200.0" prefHeight="100.0" prefWidth="100.0" styleClass="sidebar_pane">
+                           <children>
+                               <SVGPath content="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" layoutX="40.0" layoutY="40.0" scaleX="2.0" scaleY="2.0" />
+                           </children>
+                        </Pane>
+                        <Pane layoutY="300.0" prefHeight="100.0" prefWidth="100.0" styleClass="sidebar_pane">
+                           <children>
+                               <SVGPath content="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" layoutX="40.0" layoutY="40.0" scaleX="2.0" scaleY="2.0" />
+                           </children>
+                        </Pane>
+                        <Pane layoutY="400.0" prefHeight="100.0" prefWidth="100.0" styleClass="sidebar_pane">
+                           <children>
+                               <SVGPath content="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" layoutX="40.0" layoutY="40.0" scaleX="2.0" scaleY="2.0" />
+                           </children>
+                        </Pane>
+                        <Pane layoutY="500.0" prefHeight="100.0" prefWidth="100.0" styleClass="sidebar_pane">
+                           <children>
+                              <SVGPath content="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" layoutX="40.0" layoutY="40.0" scaleX="2.0" scaleY="2.0" />
+                           </children>
+                        </Pane>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Pane>
+
+                  <Pane layoutX="-2.0" layoutY="-2.0" maxHeight="1.7976931348623157E308" minWidth="0.0" prefWidth="0.0" styleClass="menu-navbar" visible="false" HBox.hgrow="NEVER">
+                     <children>
+                        <Pane fx:id="building__icon_pane1" layoutY="100.0" prefHeight="100.0" prefWidth="100.0" styleClass="sidebar_pane" visible="false">
+                           <children>
+                              <SVGPath content="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z&#10;M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" layoutX="40.0" layoutY="40.0" pickOnBounds="true" scaleX="2.25" scaleY="2.25" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="sheet__icon_pane1" layoutY="200.0" prefHeight="100.0" prefWidth="100.0" styleClass="sidebar_pane" visible="false">
+                           <children>
+                              <SVGPath content="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z" layoutX="40.0" layoutY="40.0" pickOnBounds="true" scaleX="2.25" scaleY="2.25" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="code__icon_pane1" layoutY="300.0" prefHeight="100.0" prefWidth="100.0" styleClass="sidebar_pane" visible="false">
+                           <children>
+                              <SVGPath content="M0 .5A.5.5 0 0 1 .5 0h15a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5H2v-2H.5a.5.5 0 0 1-.5-.5v-3A.5.5 0 0 1 .5 6H2V4H.5a.5.5 0 0 1-.5-.5v-3zM3 4v2h4.5V4H3zm5.5 0v2H13V4H8.5zM3 10v2h4.5v-2H3zm5.5 0v2H13v-2H8.5zM1 1v2h3.5V1H1zm4.5 0v2h5V1h-5zm6 0v2H15V1h-3.5zM1 7v2h3.5V7H1zm4.5 0v2h5V7h-5zm6 0v2H15V7h-3.5zM1 13v2h3.5v-2H1zm4.5 0v2h5v-2h-5zm6 0v2H15v-2h-3.5z" layoutX="40.0" layoutY="40.0" pickOnBounds="true" scaleX="2.25" scaleY="2.25" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="download__icon_pane1" layoutY="500.0" prefHeight="100.0" prefWidth="100.0" styleClass="sidebar_pane" visible="false">
+                           <children>
+                              <SVGPath content="M8 5a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5A.5.5 0 0 1 8 5z&#10;M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" layoutX="40.0" layoutY="40.0" scaleX="2.25" scaleY="2.25" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <BorderPane prefHeight="50.0" styleClass="footer_box" VBox.vgrow="NEVER">
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <center>
+            <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+               <children>
+              <Label maxWidth="-1.0" text="Nome/Título do App" textAlignment="CENTER">
+                     <textFill>
+                        <RadialGradient centerX="1.0" centerY="1.0" radius="0.5">
+                           <stops>
+                              <Stop color="#3b3b3b00" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </Label>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/app-icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+         </center>
+         <left>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@img/fazenda_4QS_icon.png" />
+               </image>
+               <BorderPane.margin>
+                  <Insets left="20.0" />
+               </BorderPane.margin>
+            </ImageView>
+         </left>
+         <right>
+            <ImageView fitHeight="100.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@img/intr/logo_portal.gif" />
+               </image>
+               <BorderPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </BorderPane.margin>
+            </ImageView>
+         </right>
+      </BorderPane>
+  </children>
+</VBox>
