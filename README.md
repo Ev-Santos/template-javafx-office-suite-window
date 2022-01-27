@@ -1,7 +1,7 @@
 # template-javafx-office-suite-window
 Templates de telas para aplicações desktop do tipo "Office Suite".
 
-As telas serão criadas na medida de suas demandas, sempre com o objetivo de facilitar a criação de aplicações voltadas para escritório.
+As telas serão criadas na medida de suas demandas, sempre com o objetivo de facilitar o desenvolvimento de aplicações voltadas para escritório.
 
 Primeira tela-rascunho:
 
